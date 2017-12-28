@@ -69,7 +69,12 @@ def getHtmlTree(url, **kwargs):
     time.sleep(2)
 
     html = wr.get(url=url, header=header).content
-    return etree.HTML(html)
+    try:
+        etree.HTML(html)
+    except:
+        return etree.HTML('<html></html>')
+    else:
+        return etree.HTML(html)
 
 
 def tcpConnect(proxy):
