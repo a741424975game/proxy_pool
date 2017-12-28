@@ -76,7 +76,7 @@ def getStatus():
 
 def run():
     config = GetConfig()
-    app.run(host=config.host_ip, port=config.host_port)
+    app.run(host=config.host_ip, port=int(config.host_port))
 
 if __name__ == '__main__':
     run()
